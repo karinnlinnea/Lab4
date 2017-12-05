@@ -1,0 +1,182 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
+--
+-- Värd: localhost:8889
+-- Tid vid skapande: 05 dec 2017 kl 14:43
+-- Serverversion: 5.6.35
+-- PHP-version: 7.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Databas: `thebookclub`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `books`
+--
+
+CREATE TABLE `books` (
+  `bookid` int(11) NOT NULL,
+  `title` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `author` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `reserved` tinyint(1) DEFAULT NULL,
+  `duedate` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumpning av Data i tabell `books`
+--
+
+INSERT INTO `books` (`bookid`, `title`, `author`, `reserved`, `duedate`) VALUES
+(1, 'Let the Right One In', 'John Ajvide Lindqvist', 0, NULL),
+(2, 'The Da Vinci Code', 'Dan Brown', 0, NULL),
+(3, 'Divergent', 'Veronica Roth', 0, NULL),
+(4, 'Insergent', 'Veronica Roth', 1, NULL),
+(5, 'Allegiant', 'Veronica Roth', 0, NULL),
+(6, 'The Hunger Games', 'Suzanne Collins', 0, NULL),
+(7, 'The Fault In Our Stars', 'John Green', 0, NULL),
+(8, 'Percy Jackson & the Olympians', 'Rick Riordan', 1, NULL),
+(9, 'Testbok', 'Martin Cronqvist', 0, NULL),
+(12, 'Testbok 3', 'Peter Eriksson', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `comments`
+--
+
+CREATE TABLE `comments` (
+  `commentid` int(11) NOT NULL,
+  `comment` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumpning av Data i tabell `comments`
+--
+
+INSERT INTO `comments` (`commentid`, `comment`) VALUES
+(1, 'Hej'),
+(2, '&lt;strong&gt;hej&lt;/strong&gt;'),
+(3, '<strong>hej</strong>'),
+(4, '<strong>hej</strong>'),
+(5, '&lt;strong&gt;hej&lt;/strong&gt;'),
+(6, '&lt;strong&gt;hej&lt;/strong&gt;'),
+(7, '&lt;iframe style=&quot;position:fixed; top:10px; left:10px; width:100%; height:100%; z-index:99;&quot; border=&quot;0&quot; src=&quot;http://ju.se/&quot;  /&gt;'),
+(8, '&lt;strong&gt;test&lt;/strong&gt;'),
+(9, ''),
+(10, ''),
+(11, '&lt;strong&gt;test2&lt;/strong'),
+(12, ''),
+(13, '&lt;strong&gt;test2&lt;/strong'),
+(14, ''),
+(15, '&lt;strong&gt;test2&lt;/strong'),
+(16, '&lt;strong&gt;test3&lt;/strong&gt;'),
+(17, ''),
+(18, ''),
+(19, '&lt;strong&gt;test4&lt;/strong'),
+(20, ''),
+(21, '&lt;strong&gt;test4&lt;/strong'),
+(22, '&lt;strong&gt;test5&lt;/strong&gt;'),
+(23, '&lt;strong&gt;test6&lt;/strong&gt;'),
+(24, '&lt;strong&gt;test7&lt;/strong&gt;'),
+(25, '&lt;strong&gt;test5&lt;/strong&gt;'),
+(26, '&lt;strong&gt;test6&lt;/strong&gt;'),
+(27, '&lt;strong&gt;test7&lt;/strong&gt;'),
+(28, '&lt;strong&gt;test5&lt;/strong&gt;'),
+(29, '&lt;strong&gt;test6&lt;/strong&gt;'),
+(30, '&lt;strong&gt;test7&lt;/strong&gt;'),
+(31, 'karin'),
+(32, 'Gr8duv23'),
+(33, 'karin'),
+(34, 'Gr8duv23'),
+(35, 'h'),
+(36, ''),
+(37, 'the'),
+(38, ''),
+(39, 'a'),
+(40, ''),
+(41, 'c'),
+(42, ''),
+(43, ''),
+(44, ''),
+(45, 'the'),
+(46, ''),
+(47, ''),
+(48, ''),
+(49, 'Sigrid'),
+(50, 'hej'),
+(51, 'haej'),
+(52, 'jfjf'),
+(53, 'karin'),
+(54, 'hej'),
+(55, 'Sigrid'),
+(56, 'hej'),
+(57, 'Sig'),
+(58, ''),
+(59, 'Sigrid'),
+(60, 'hej'),
+(61, 'Sigrid'),
+(62, 'hej'),
+(63, 'Sigrid'),
+(64, 'hej'),
+(65, 'karin'),
+(66, 'hej'),
+(67, 'Sigrid'),
+(68, 'hej'),
+(69, 'Sigrid'),
+(70, 'hej');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumpning av Data i tabell `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('karin', 'd6dfe6c3ba22476a17e1ac2a7e87a14cb9869010'),
+('Sigrid', 'c412b37f8c0484e6db8bce177ae88c5443b26e92');
+
+--
+-- Index för dumpade tabeller
+--
+
+--
+-- Index för tabell `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`bookid`);
+
+--
+-- Index för tabell `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`commentid`);
+
+--
+-- AUTO_INCREMENT för dumpade tabeller
+--
+
+--
+-- AUTO_INCREMENT för tabell `books`
+--
+ALTER TABLE `books`
+  MODIFY `bookid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT för tabell `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
